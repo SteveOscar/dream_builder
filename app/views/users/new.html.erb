@@ -1,0 +1,38 @@
+<div class="container">
+  <h4>Create a New Account</h4>
+  <br>
+  <%= form_for(@user) do |f| %>
+
+    <%= render "shared/error_messages", object: f.object %>
+
+    <div class="input-field">
+      <%= f.label :username %>
+      <%= f.text_field :username  %>
+    </div>
+
+    <div class="input-field">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+
+    <div class="input-field">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+
+    <div class="input-field">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %>
+    </div>
+
+    <div>
+      <%= f.submit "Create Account", class: "wave-effect waves-light btn darkslategray" %>
+    </div>
+  <% end  %>
+  <div>
+    <p>
+      Already a dreamer? Click below to login:
+    </p>
+    <%= link_to("Login", login_path, class: "waves-effect waves-light btn darkslategray") %>
+  </div>
+</div>

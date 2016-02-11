@@ -1,0 +1,18 @@
+carl:
+  id: 1
+  username: Carl
+  password_digest: <%= User.digest('password') %>
+  email: carl69beef@geocities.com
+
+bernie:
+  id: 2
+  username: Bernie
+  password_digest: <%= User.digest('password') %>
+  email: bernie@feelthebern.com
+
+admin:
+  id: 3
+  username: Admin
+  password_digest: <%= User.digest('password') %>
+  email: admin@dreambuilder.com
+  role: 1

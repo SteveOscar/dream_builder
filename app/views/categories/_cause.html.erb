@@ -1,0 +1,14 @@
+<div class="col s4">
+  <div class="card medium">
+    <h6 class="truncate center"><%= cause.title %></h6>
+    <div class="card-image">
+      <img src= <%= cause.image_url %>>
+    </div>
+    <div class="card-content">
+      <p class="truncate"><%= cause.description %></p>
+    </div>
+    <div class="card-action">
+      <%= link_to "View this cause", user_cause_path(cause.user.username, cause) %>
+    </div>
+  </div>
+</div>

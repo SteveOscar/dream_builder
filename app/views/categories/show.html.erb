@@ -1,0 +1,9 @@
+<div class="container">
+  <h4 class="center"> <%= @category.title %> </h4><br>
+  <div class="row">
+    <div class="center">
+      <%= will_paginate @causes %>
+    </div>
+    <%= render partial: "categories/cause", collection: @causes %>
+  </div>
+</div>

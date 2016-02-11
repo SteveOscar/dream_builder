@@ -1,0 +1,26 @@
+<div class="container">
+  <h4>Edit Account Info</h4>
+  <%= form_for(@user) do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
+
+    <%= f.label :username %>
+    <%= f.text_field :username  %>
+    <br>
+
+    <%= f.label :email %>
+    <%= f.text_field :email  %>
+    <br>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <br>
+
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+
+    <%= f.submit "Update Account", class: "wave-effect waves-light btn light-green darken-4" %>
+  <% end  %>
+  <% if current_user_id == @user.id %>
+    <%= link_to "Delete Account", user_path(@user), method: :delete, class: "btn red right" %>
+  <% end %>
+</div>

@@ -1,0 +1,25 @@
+<div class="container user-header center">
+  <h3><%= @user.username.capitalize %>'s Dream Board</h3>
+  <% if current_user_id == @user.id %>
+    <span><%= link_to "Edit Account Info", edit_user_path(@user), class: "btn" %></span>
+    <span><%= link_to "Build a Dream", new_user_cause_path(@user), class: "btn" %></span>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col s6">
+    <div id="causes-managed" class="causes-container">
+    <h4 class="center">Causes Managed</h4>
+      <ul>
+        <%= render partial: "users/causes_managed", collection: @user.causes %>
+      </ul>
+    </div>
+  </div> <!-- end of managed causes -->
+  <div class="col s6">
+    <div class="causes-container">
+    <h4 class="center">Causes Supported</h4>
+      <ul id="causes-supported">
+        <%= render partial: "users/causes_supported", collection: @user.supported_causes %>
+      </ul>
+  </div>
+</div> <!-- end of row -->
